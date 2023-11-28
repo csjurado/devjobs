@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call(SalarioSeeder::class);
+        //! Asi llamamos a un seeder para que se ejecute 
         $this->call(CategoriasSeeder::class);
     }
 }

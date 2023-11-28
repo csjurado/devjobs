@@ -90,7 +90,7 @@
         <livewire:mostrar-alerta :mensaje="$message"/>
         @enderror
     </div>
-
+    {{--? Este espacio es para la imagen --}}
     <div>
         <x-input-label for="imagen" :value="__('Imagen')" />
         <x-text-input 

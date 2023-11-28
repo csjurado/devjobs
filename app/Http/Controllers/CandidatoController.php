@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Vacante;
+use App\Models\Candidato;
 use Illuminate\Http\Request;
 
-class VacanteController extends Controller
+class CandidatoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,6 @@ class VacanteController extends Controller
     public function index()
     {
         //
-        $this->authorize('viewAny',Vacante::class);
-        return view('vacantes.index');
     }
 
     /**
@@ -23,40 +21,45 @@ class VacanteController extends Controller
     public function create()
     {
         //
-        $this->authorize('create',Vacante::class);
-
-        return view('vacantes.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
+    public function store(Request $request)
+    {
+        //
+    }
 
     /**
      * Display the specified resource.
      */
-    public function show(Vacante $vacante)
+    public function show(Candidato $candidato)
     {
         //
-        return view('vacantes.show',[
-            'vacante'=> $vacante
-            ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Vacante $vacante)
+    public function edit(Candidato $candidato)
     {
         //
-        // dd($vacante);
-        $this->authorize('update',$vacante);
-        return view('vacantes.edit',[
-            'vacante'=> $vacante
-        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
+    public function update(Request $request, Candidato $candidato)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Candidato $candidato)
+    {
+        //
+    }
 }

@@ -2,12 +2,12 @@
 
     <div >
         <x-input-label for="titulo" :value="__('Titulo Vacante ')" />
-        <x-text-input 
-        id="titulo" 
-        class="block mt-1 w-full" 
-        type="text" 
-        wire:model="titulo" 
-        :value="old('titulo')"  
+        <x-text-input
+        id="titulo"
+        class="block mt-1 w-full"
+        type="text"
+        wire:model="titulo"
+        :value="old('titulo')"
         placeholder="Jr. Developer"
         />
         @error('titulo')
@@ -17,9 +17,9 @@
 
     <div>
         <x-input-label for="salario" :value="__('Salario Mensual')" />
-        <select 
-        id="salario" 
-        wire:model="salario" 
+        <select
+        id="salario"
+        wire:model="salario"
         class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring
         focus:ring-indigo-200 focus:ring-opacity-50 w-full"
         >
@@ -35,14 +35,14 @@
 
     <div>
         <x-input-label for="categoria" :value="__('Categoria')" />
-        <select 
-        id="categoria" 
-        wire:model="categoria" 
+        <select
+        id="categoria"
+        wire:model="categoria"
         class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring
         focus:ring-indigo-200 focus:ring-opacity-50 w-full">
         <option value="">Selecciona una categoria </option>
         @foreach ($categorias as $categoria)
-        <option value="{{ $categoria->id}}"> {{$categoria->categoria}} </option>
+        <option value="{{ $categoria->id }}"> {{ $categoria->categoria }} </option>
         @endforeach
         </select>
         @error('categoria')
@@ -52,12 +52,12 @@
 
     <div >
         <x-input-label for="empresa" :value="__('Empresa')" />
-        <x-text-input 
-        id="empresa" 
-        class="block mt-1 w-full" 
-        type="text" 
-        wire:model="empresa" 
-        :value="old('empresa')"  
+        <x-text-input
+        id="empresa"
+        class="block mt-1 w-full"
+        type="text"
+        wire:model="empresa"
+        :value="old('empresa')"
         placeholder="Empresa ej: Netflix, Uber"/>
         @error('empresa')
         <livewire:mostrar-alerta :mensaje="$message"/>
@@ -66,11 +66,11 @@
 
     <div>
         <x-input-label for="ultimo_dia" :value="__('Ultimo dia de postulacion')" />
-        <x-text-input 
-        id="ultimo_dia" 
-        class="block mt-1 w-full" 
-        type="date" 
-        wire:model="ultimo_dia" 
+        <x-text-input
+        id="ultimo_dia"
+        class="block mt-1 w-full"
+        type="date"
+        wire:model="ultimo_dia"
         :value="old('ultimo_dia')" />
         @error('ultimo_dia')
         <livewire:mostrar-alerta :mensaje="$message"/>
@@ -79,12 +79,12 @@
 
     <div>
         <x-input-label for="descripcion" :value="__('Descripcion del puesto')" />
-        <textarea 
-        wire:model="descripcion" 
-        placeholder="Descripcion general del puesto, experiencia" 
+        <textarea
+        wire:model="descripcion"
+        placeholder="Descripcion general del puesto, experiencia"
         class="rounded-md shadow-sm border-gray-300
-        focus:border-indigo-300 focus:ringfocus:ring-indigo-200 
-        focus:ring-opacity-50 w-full"> 
+        focus:border-indigo-300 focus:ringfocus:ring-indigo-200
+        focus:ring-opacity-50 w-full">
     </textarea>
         @error('descripcion')
         <livewire:mostrar-alerta :mensaje="$message"/>
@@ -93,11 +93,11 @@
 
     <div>
         <x-input-label for="imagen" :value="__('Imagen')" />
-        <x-text-input 
-        id="imagen" 
-        wire:model="imagen" 
-        type="file" 
-        class="block mt-1 w-full" 
+        <x-text-input
+        id="imagen"
+        wire:model="imagen"
+        type="file"
+        class="block mt-1 w-full"
         />
         <div class="my-5 w-80">
             @if ($imagen)
@@ -110,7 +110,7 @@
         <livewire:mostrar-alerta :mensaje="$message"/>
         @enderror
     </div>
-    <x-primary-button class="w-full justify-center">
+    <x-primary-button class="text-xl font-mono w-full justify-center">
         Crear Vacante
     </x-primary-button >
 
