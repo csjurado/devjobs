@@ -17,7 +17,7 @@ class NuevoCandidato extends Notification
     public function __construct($vacante_id,$nombre_vacante,$usuario_id,)
     {
         //
-        $this->vacante_id=$vacante_id;
+        $this->vacante_id = $vacante_id;
         $this->nombre_vacante= $nombre_vacante;
         $this->usuario_id = $usuario_id;
     }
@@ -46,7 +46,7 @@ class NuevoCandidato extends Notification
                     ->line('Gracias por utilizar DevJobs');
     }
 
-    // Almaena las notificaciones en la base de datos
+    // Almacena las notificaciones en la base de datos
     public  function toDatabase ($notifiable){
         return [
             'id_vacante'=> $this->vacante_id,
