@@ -28,7 +28,7 @@ class Vacante extends Model
         return $this->belongsTo(Salario::class);
     }
     public function candidatos(){
-        return $this->hasMany(Candidato::class);
+        return $this->hasMany(Candidato::class)->orderBy('created_at', 'DESC');
         //Relacion donde una vacante tiene muchos candidatos
     }
     public function reclutador (){

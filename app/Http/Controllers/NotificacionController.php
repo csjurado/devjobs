@@ -13,6 +13,10 @@ class NotificacionController extends Controller
     {
         //
         $notificaciones = auth()->user()->unreadNotifications;
+
+        // Limpiar notificaciones 
+        auth()->user()->unreadNotifications->markAsRead();
+        
         return view('notificaciones.index',[
             'notificaciones' => $notificaciones
         ]);
