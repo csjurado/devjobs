@@ -13,7 +13,7 @@
             <p class="font-bold text-sm uppercase text-gray-800 my-3">
                 último día para Postularse  :
                 <span class="normal-case font-normal">
-                    {{-- {{ $vacante->ultimo_dia->toFormattedDateString() }} --}}
+                    {{-- {{ $vacante->ultimo_dia->toFormattedDateString() }} --}} 
                     {{ $vacante->ultimo_dia }}
                 </span>
             </p>
@@ -47,21 +47,26 @@
             </p>
         </div>
     </div>
-    @guest
-        <div class="mt-5 bg-gray-50 border border-dashed p-5 text-center">
-            <p>
-                ¿ Deseas aplicar a esta vacante ?
-                <a
-                class="font-bold text-indigo-600"
-                href="{{ route('register') }}"
-                >
-                Obten una cuenta y aplica a estas y otras vacantes
-                </a>
-            </p>
-        </div>
-    @endguest
-    @cannot('create',App\Models\Vacante::class)
+    {{-- @auth --}}
+        @guest
+            <div class="mt-5 bg-gray-50 border border-dashed p-5 text-center">
+                <p>
+                    ¿ Deseas aplicar a esta vacante ?
+                    <a
+                    class="font-bold text-indigo-600"
+                    href="{{ route('register') }}"
+                    >
+                    Obten una cuenta y aplica a estas y otras vacantes
+                    </a>
+                </p>
+            </div>
+        @endguest
+        @cannot('create',App\Models\Vacante::class)
+        @auth
         <livewire:postular-vacante :vacante="$vacante"/>
-    @endcannot
+        @endauth
+        @endcannot
+    {{-- @endauth --}}
+    
 
 </div>
